@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Zoidonar</string>
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    <string name="prompt_first_name">First Name</string>
+    <string name="prompt_middle_name">Middle Name (Optional)</string>
+    <string name="prompt_last_name">Last Name</string>
+    <string name="prompt_phone_number">Phone Number</string>
+    <string name="prompt_dob">Date of Birth</string>
+    <string name="prompt_gender">Select Gender</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_up_short">Sign up</string>
+    <string name="conti">Continue</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- String for P.E   -->
+    <string name="promptBW">Body Weight</string>
+    <string name="promptBP">Blood Pressure</string>
+    <string name="promptPR">Pulse Rate</string>
+    <string name="promptTemp">Temp</string>
+    <string name="promptGA">General Appearance</string>
+    <string name="promptSk">Skin</string>
+    <string name="promptHNT">HEENT</string>
+    <string name="promptHL">Heart and Lungs</string>
+
+    <string name="prompt_bt">Select Bloodtype</string>
+    <string name="prompt_hg">Select</string>
+</resources>

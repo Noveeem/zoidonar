@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.zoidonarapp">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ZoidonarApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".HealthSummary"
+            android:exported="false"
+            android:label="HEALTH SUMMARY"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar" />
+        <activity
+            android:name=".PE"
+            android:exported="false"
+            android:label="PHYSICAL EXAMINATION"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar"/>
+        <activity
+            android:name=".Questionnaire"
+            android:exported="false"
+            android:label="QUESTIONNAIRE"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar" />
+        <activity
+            android:name=".MultiStep"
+            android:exported="false"
+            android:label="DONATE BLOOD"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar" />
+        <activity
+            android:name=".Archived"
+            android:exported="false"
+            android:label="HISTORY"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar" />
+        <activity
+            android:name=".Profile"
+            android:exported="false"
+            android:label="MY PROFILE"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar" />
+        <activity
+            android:name=".History"
+            android:exported="false"
+            android:label="DONOR CARD"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar" />
+        <activity
+            android:name=".final_register"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false"
+            android:label="Login" />
+        <activity
+            android:name=".Splash_screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
