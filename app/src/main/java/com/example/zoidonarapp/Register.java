@@ -24,12 +24,12 @@ import java.util.Calendar;
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
     String[] genderList = {"Male", "Female", "Prefer not say"};
-
+    String[] typeofUser = {"STUDENT", "EMPLOYEES", "GUEST"};
     TextInputLayout[] layouts;
     TextInputEditText[] editTexts;
     TextInputEditText middleName;
-    TextInputLayout Glayout, MNLayout;
-    AutoCompleteTextView Gender;
+    TextInputLayout Glayout, MNLayout, UTLayout;
+    AutoCompleteTextView Gender, UserType;
     ArrayAdapter<String> adapterItems;
     Button btnContinue;
 
@@ -47,10 +47,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         btnContinue = findViewById(R.id.btnContinue);
         Gender = findViewById(R.id.Gender);
+        UserType = findViewById(R.id.Type);
         adapterItems = new ArrayAdapter<String>(this, R.layout.gender_list, genderList);
         Gender.setAdapter(adapterItems);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.gender_list, typeofUser);
+        UserType.setAdapter(adapterItems);
         Glayout = (TextInputLayout) findViewById(R.id.GLayout);
         MNLayout = (TextInputLayout) findViewById(R.id.MNLayout);
+        UTLayout = (TextInputLayout) findViewById(R.id.UTLayout);
         middleName = (TextInputEditText) findViewById(R.id.middleName);
 
 
@@ -98,7 +102,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 {
                     return;
                 } else {
-                    if (!checkAge() | !selectGender())
+                    if (!checkAge() | !selectGender() | !selectType())
                     {return;}
                 }
 
@@ -118,8 +122,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 }
 
                 String g = Gender.getText().toString();
+                String ut = UserType.getText().toString();
                 String a = Integer.toString(age);
                 Intent i = new Intent(this, final_register.class);
+                i.putExtra("user_type", ut);
                 i.putExtra("firstName", input[0]);
                 i.putExtra("lastName", input[1]);
                 i.putExtra("middleName", finalMiddlename);
@@ -155,6 +161,22 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 dialog.show();
                 break;
         }
+    }
+
+    public boolean selectType(){
+
+        String select = UserType.getText().toString();
+        if(select.isEmpty())
+        {
+            UTLayout.setError("Please select user type");
+            requestFocus(UserType);
+            return false;
+        } else
+        {
+            Glayout.setErrorEnabled(false);
+        }
+
+        return true;
     }
 
 

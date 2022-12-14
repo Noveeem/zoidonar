@@ -1,14 +1,15 @@
 package com.example.zoidonarapp;
 
 public class User {
-    public String firstName, lastName, middleName, emailAddress, phoneNumber, birthDate, gender;
+    public String user_type, firstName, lastName, middleName, emailAddress, phoneNumber, birthDate, gender;
     public int age;
 
     public User() {
 
     }
 
-    public User(String firstName, String lastName, String middleName, String emailAddress, String phoneNumber, String birthDate, String gender, int age) {
+    public User(String user_type, String firstName, String lastName, String middleName, String emailAddress, String phoneNumber, String birthDate, String gender, int age) {
+        this.user_type = user_type;
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;

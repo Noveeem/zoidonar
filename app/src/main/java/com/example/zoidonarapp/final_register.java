@@ -78,6 +78,7 @@ public class final_register extends AppCompatActivity {
                 }
                 disabled();
                 Intent i = getIntent();
+                String user_type = i.getStringExtra("user_type");
                 String firstName = i.getStringExtra("firstName");
                 String lastName = i.getStringExtra("lastName");
                 String middleName = i.getStringExtra("middleName");
@@ -94,7 +95,7 @@ public class final_register extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    User user = new User(firstName, lastName, middleName, email, phoneNumber, birthDate, gender, Integer.parseInt(age));
+                                    User user = new User(user_type, firstName, lastName, middleName, email, phoneNumber, birthDate, gender, Integer.parseInt(age));
                                     reference.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override

@@ -272,7 +272,9 @@ public class PE extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         User user = snapshot.getValue(User.class);
+                        String usertype = user.user_type;
                         HashMap<String, Object> toMap = new HashMap<>();
+                        toMap.put("user_type", user.user_type);
                         toMap.put("firstName", user.firstName);
                         toMap.put("lastName", user.lastName);
                         toMap.put("middleName", user.middleName);
@@ -280,6 +282,7 @@ public class PE extends AppCompatActivity {
                         toMap.put("Volume", volume);
                         toMap.put("type", "STUDENT");
                         reference.child("archive").child(eventDate).child(currentUser.getUid()).setValue(toMap);
+                        reference.child("Events").child(eventDate).child(usertype).child(currentUser.getUid()).setValue(toMap);
                     }
 
                     @Override
@@ -315,6 +318,7 @@ public class PE extends AppCompatActivity {
 
                             }
                         });
+
 
             }
 

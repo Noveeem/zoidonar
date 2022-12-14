@@ -35,6 +35,28 @@
         app:layout_constraintTop_toBottomOf="@+id/reglogo" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UTLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regheader"
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
+
+        <AutoCompleteTextView
+            android:id="@+id/Type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:hint="@string/prompt_gender"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/FNLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
@@ -45,7 +67,7 @@
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regheader"
+        app:layout_constraintTop_toBottomOf="@+id/UTLayout"
         app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
