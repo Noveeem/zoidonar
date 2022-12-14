@@ -29,14 +29,15 @@ public class Questionnaire extends AppCompatActivity {
     String[] questionList = {
             "Are you feeling well and in good health today?",
             "Is there any medicine taken today?",
-            "Have you ever had problems with your hear or lungs?",
+            "Have you ever had problems with your heart or lungs?",
             "In the last 28 days, do you had COVID-19?",
             "Have you ever had a cancer?",
             "Have you ever had a positive test for the HIV/AIDS virus?",
-            "In the last 3 months, have you had a vacinnation?",
+            "In the last 3 months, have you had a vacinnation or tattoo?",
             "Do you have a blood disease?",
             "Have you had a relative diagnosed with Creutzfeldt-Jakob Disease? (or other types of Mad Cow's Disease)",
-            "Have you had a diagnosis or had treatment for syphilis, gonorrhea or other STDs?"
+            "Have you had a diagnosis or had treatment for syphilis, gonorrhea or other STDs?",
+            "Have you had any surgery or tooth extraction?"
     };
     TextView[] question;
     RadioGroup[] rg;
@@ -71,7 +72,8 @@ public class Questionnaire extends AppCompatActivity {
                 (RadioGroup) findViewById(R.id.rg7),
                 (RadioGroup) findViewById(R.id.rg8),
                 (RadioGroup) findViewById(R.id.rg9),
-                (RadioGroup) findViewById(R.id.rg10)
+                (RadioGroup) findViewById(R.id.rg10),
+                (RadioGroup) findViewById(R.id.rg11)
         };
 
         question = new TextView[]
@@ -85,7 +87,8 @@ public class Questionnaire extends AppCompatActivity {
                         findViewById(R.id.txtQ7),
                         findViewById(R.id.txtQ8),
                         findViewById(R.id.txtQ9),
-                        findViewById(R.id.txtQ10)
+                        findViewById(R.id.txtQ10),
+                        findViewById(R.id.txtQ11)
                 };
 
         auth = FirebaseAuth.getInstance();
@@ -107,7 +110,7 @@ public class Questionnaire extends AppCompatActivity {
                     }
                 });
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 11; i++) {
             question[i].setText(questionList[i]);
         }
 
@@ -153,7 +156,8 @@ public class Questionnaire extends AppCompatActivity {
                         rg[6].getCheckedRadioButtonId(),
                         rg[7].getCheckedRadioButtonId(),
                         rg[8].getCheckedRadioButtonId(),
-                        rg[9].getCheckedRadioButtonId()
+                        rg[9].getCheckedRadioButtonId(),
+                        rg[10].getCheckedRadioButtonId()
                 };
 
                 RadioButton[] radioButtons = {
@@ -166,7 +170,8 @@ public class Questionnaire extends AppCompatActivity {
                         findViewById(radioSelectID[6]),
                         findViewById(radioSelectID[7]),
                         findViewById(radioSelectID[8]),
-                        findViewById(radioSelectID[9])
+                        findViewById(radioSelectID[9]),
+                        findViewById(radioSelectID[10])
                 };
 
                 String[] ans = {
@@ -179,10 +184,11 @@ public class Questionnaire extends AppCompatActivity {
                         radioButtons[6].getText().toString(),
                         radioButtons[7].getText().toString(),
                         radioButtons[8].getText().toString(),
-                        radioButtons[9].getText().toString()
+                        radioButtons[9].getText().toString(),
+                        radioButtons[10].getText().toString()
                 };
 
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 11; i++) {
                     modelQuestion modelQuestion = new modelQuestion(questionList[i], ans[i]);
                     
                     reference.child("users_medical_questionnaire").child(currentUser.getUid())
@@ -193,9 +199,9 @@ public class Questionnaire extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Intent i = new Intent(Questionnaire.this, MainActivity.class);
+                                        Intent i = new Intent(Questionnaire.this, MultiStep.class);
                                         startActivity(i);
-                                        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+                                        overridePendingTransition(R.anim.slide_in_2, R.anim.slide_out_2);
                                     }
                                 }
                             });
@@ -225,7 +231,7 @@ public class Questionnaire extends AppCompatActivity {
     }
     public boolean isRadioChecked(){
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 11; i++) {
             switch (rg[i].getCheckedRadioButtonId()){
                 case -1:
                     Toast.makeText(this, "Please select a choices on question " + (i+1), Toast.LENGTH_SHORT).show();

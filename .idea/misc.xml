@@ -18,7 +18,9 @@
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/drawable/user_bg.xml" value="0.296" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/font/font.xml" value="0.3387387387387387" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.271875" />
+        <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_accepted.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_archived.xml" value="0.33" />
+        <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_deferred.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_final_register.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_health_summary.xml" value="0.31261261261261264" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_history.xml" value="0.33" />
@@ -26,19 +28,22 @@
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_multi_step.xml" value="0.5" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_pe.xml" value="0.3013513513513513" />
+        <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_pesummary.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_questionnaire.xml" value="0.33" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/alertmessage.xml" value="0.33" />
+        <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/donorhistorylist.xml" value="0.5" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/error.xml" value="0.31261261261261264" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/fragment_history.xml" value="0.3013513513513513" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/fragment_home.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/fragment_profile.xml" value="0.3013513513513513" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/fragment_settings.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/gender_list.xml" value="0.31261261261261264" />
-        <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/healthsummarylist.xml" value="0.31261261261261264" />
+        <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/healthsummarylist.xml" value="0.75" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/success.xml" value="0.31261261261261264" />
+        <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/layout/verify.xml" value="0.31261261261261264" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/menu/tabs.xml" value="0.31351351351351353" />
         <entry key="..\:/Users/Lelouch/AndroidStudioProjects/ZoidonarApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1935" />
       </map>

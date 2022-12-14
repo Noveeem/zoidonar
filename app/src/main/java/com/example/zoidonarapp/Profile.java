@@ -218,7 +218,7 @@ public class Profile extends AppCompatActivity {
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in_2, R.anim.slide_out_2);
                 break;
-            case 2131296892:
+            case 2131296518:
                 enabled();
                 selectDate();
                 break;

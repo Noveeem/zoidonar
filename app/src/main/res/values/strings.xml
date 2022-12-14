@@ -31,6 +31,8 @@
     <string name="promptHNT">HEENT</string>
     <string name="promptHL">Heart and Lungs</string>
 
-    <string name="prompt_bt">Select Bloodtype</string>
-    <string name="prompt_hg">Select</string>
+    <string name="prompt_bt">Bloodtype</string>
+    <string name="prompt_hg">Hemoglobin</string>
+
+    <string name="prompt_rem">Remarks</string>
 </resources>

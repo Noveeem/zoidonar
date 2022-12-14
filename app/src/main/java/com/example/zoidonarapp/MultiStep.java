@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 public class MultiStep extends AppCompatActivity implements View.OnClickListener {
 
@@ -102,9 +105,7 @@ public class MultiStep extends AppCompatActivity implements View.OnClickListener
                 Questionnaire();
                 break;
             case R.id.btnPE:
-                Intent pe = new Intent(this, PE.class);
-                startActivity(pe);
-                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+               PhysicalExamination();
                 break;
         }
     }
@@ -168,6 +169,36 @@ public class MultiStep extends AppCompatActivity implements View.OnClickListener
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 eventSwitchConfig eventSwitchConfig = snapshot.getValue(eventSwitchConfig.class);
                 eventDate = eventSwitchConfig.eventStatusBaseDate;
+
+                reference.child("users_physical_examination").child(currentUser.getUid()).child(eventDate)
+                        .addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.exists())
+                                {
+                                  PhysicalExamination pe = snapshot.getValue(PhysicalExamination.class);
+                                  String status = pe.Remarks;
+                                  if(status.equals("Accepted") | status.equals("Temporary Deferred") | status.equals("Permanently Deferred"))
+                                  {
+                                      TextView txtShowMessage = (TextView) findViewById(R.id.txtShowMessage);
+                                      txtShowMessage.setText("It seems you already fill-out the Physical Examination.\n The result shows you are: " + status);
+                                  }
+                                } else
+                                {
+                                    if(!snapshot.exists())
+                                    {
+                                        Intent q = new Intent(MultiStep.this, PE.class);
+                                        startActivity(q);
+                                        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                Toast.makeText(MultiStep.this, error.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
 
             @Override

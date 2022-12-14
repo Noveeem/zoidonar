@@ -1,6 +1,7 @@
 package com.example.zoidonarapp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -34,6 +33,15 @@ public class HealthSummaryAdapter extends RecyclerView.Adapter<HealthSummaryAdap
         modelQuestion modelQuestion  = list.get(position);
         holder.healthQuestion.setText(modelQuestion.getQuestion());;
         holder.healthAnswer.setText("Answer: " + modelQuestion.getAnswer());
+        switch (modelQuestion.getAnswer())
+        {
+            case "NO":
+                holder.healthAnswer.setTextColor(Color.BLACK);
+                break;
+            case "YES":
+                holder.healthAnswer.setTextColor(Color.RED);
+                break;
+        }
     }
 
     @Override
@@ -45,7 +53,7 @@ public class HealthSummaryAdapter extends RecyclerView.Adapter<HealthSummaryAdap
         TextView healthQuestion, healthAnswer;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            healthQuestion = itemView.findViewById(R.id.txtQuestion);
+            healthQuestion = itemView.findViewById(R.id.txtDateEvent);
             healthAnswer = itemView.findViewById(R.id.txtAnswer);
         }
     }

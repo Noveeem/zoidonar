@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/regular"
+            android:fontFamily="@font/semibold"
             android:text="0 UNITS"
             android:textAlignment="center"
             android:textColor="@color/myred"
@@ -115,8 +115,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/regular"
-            android:text="0 GALLONS"
+            android:fontFamily="@font/semibold"
+            android:text="0"
             android:textAlignment="center"
             android:textColor="@color/myred"
             android:textSize="18sp"
@@ -124,6 +124,21 @@
             app:layout_constraintHorizontal_bias="0.267"
             app:layout_constraintStart_toEndOf="@+id/divider"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textGallon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/semibold"
+            android:text="Gallon"
+            android:textAlignment="center"
+            android:textColor="@color/myred"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.267"
+            app:layout_constraintStart_toEndOf="@+id/divider"
+            app:layout_constraintTop_toBottomOf="@+id/txtGallon" />
 
         <TextView
             android:id="@+id/textView13"
@@ -142,6 +157,19 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/semibold"
+            android:text="DONOR ID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBT" />
+
+        <TextView
+            android:id="@+id/txtBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/bold"
@@ -153,17 +181,33 @@
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
+            android:id="@+id/txtID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/bold"
+            android:text="ID"
+            android:textColor="@color/myred"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <TextView
             android:id="@+id/txtViewHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/semibold"
             android:text="View History"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintTop_toBottomOf="@+id/txtID" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

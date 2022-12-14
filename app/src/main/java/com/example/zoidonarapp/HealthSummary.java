@@ -67,7 +67,7 @@ public class HealthSummary extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                        modelQuestion modelQuestion = dataSnapshot  .getValue(modelQuestion.class);
+                        modelQuestion modelQuestion = dataSnapshot.getValue(modelQuestion.class);
                         list.add(modelQuestion);
                     }
                     adapter.notifyDataSetChanged();

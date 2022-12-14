@@ -17,6 +17,15 @@
         android:theme="@style/Theme.ZoidonarApp"
         tools:targetApi="31">
         <activity
+            android:name=".Deferred"
+            android:exported="false" />
+        <activity
+            android:name=".Accepted"
+            android:exported="false" />
+        <activity
+            android:name=".PESummary"
+            android:exported="false" />
+        <activity
             android:name=".HealthSummary"
             android:exported="false"
             android:label="HEALTH SUMMARY"
@@ -25,7 +34,7 @@
             android:name=".PE"
             android:exported="false"
             android:label="PHYSICAL EXAMINATION"
-            android:theme="@style/Theme.ZoidonarApp.ActionBar"/>
+            android:theme="@style/Theme.ZoidonarApp.ActionBar" />
         <activity
             android:name=".Questionnaire"
             android:exported="false"

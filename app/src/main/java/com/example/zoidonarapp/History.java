@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,8 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class History extends AppCompatActivity {
 
-    TextView txtDonorName, txtViewHistory;
-
+    TextView txtDonorName, txtViewHistory, txtBT, txtID, txtUnit, txtGallon;
     private FirebaseAuth auth;
     private FirebaseUser currentUser;
     private FirebaseDatabase database;
@@ -33,12 +33,18 @@ public class History extends AppCompatActivity {
         setContentView(R.layout.activity_history);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        txtGallon = findViewById(R.id.txtGallon);
+        txtUnit = findViewById(R.id.txtUnit);
+        txtID = findViewById(R.id.txtID);
         txtDonorName = findViewById(R.id.txtDonorName);
         txtViewHistory = findViewById(R.id.txtViewHistory);
+        txtBT = findViewById(R.id.txtBT);
         auth = FirebaseAuth.getInstance();
         currentUser = auth.getCurrentUser();
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
+
+
 
         reference.child("users").child(currentUser.getUid())
                 .addValueEventListener(new ValueEventListener() {
@@ -57,12 +63,54 @@ public class History extends AppCompatActivity {
                     }
                 });
 
+
+
         txtViewHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 archivedView();
             }
         });
+
+        reference.child("users_donated").child(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    int units = (int) snapshot.getChildrenCount();
+                    txtUnit.setText(units+ " Units");
+                    for (DataSnapshot i : snapshot.getChildren())
+                    {
+                        int volume = i.child("volume").getValue(int.class);
+                        double gallon = (units * volume) * 0.000264;
+                        txtGallon.setText(String.valueOf(gallon));
+                    }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        reference.child("users_blood_type").child(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds : snapshot.getChildren())
+                {
+                    txtBT.setText(ds.getValue(String.class));
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+        txtID.setText(currentUser.getUid());
     }
     public void archivedView(){
         Intent i = new Intent(this, Archived.class);

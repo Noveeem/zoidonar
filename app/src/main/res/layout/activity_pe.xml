@@ -67,7 +67,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:hint="@string/promptPR"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -113,7 +114,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/SLayout"
+            android:id="@+id/HELayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -126,36 +127,14 @@
             app:startIconDrawable="@drawable/ic_body_svgrepo_com">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Skin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/regular"
-                android:hint="@string/promptSk"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/HLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SLayout"
-            app:startIconDrawable="@drawable/ic_body_svgrepo_com">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/H"
+                android:id="@+id/HEENT"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:hint="@string/promptHNT"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/HLLayout"
@@ -167,7 +146,7 @@
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HLayout"
+            app:layout_constraintTop_toBottomOf="@+id/HELayout"
             app:startIconDrawable="@drawable/ic_lungs_svgrepo_com">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -181,11 +160,73 @@
 
 
         <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/bold"
+            android:text="TEST"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HLLayout" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/BTLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:startIconDrawable="@drawable/ic_blood_svgrepo_com">
+
+            <AutoCompleteTextView
+                android:id="@+id/BloodType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:hint="@string/prompt_bt"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/HGLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BTLayout"
+            app:startIconDrawable="@drawable/ic_blood_bag_svgrepo_com">
+
+            <AutoCompleteTextView
+                android:id="@+id/Hemoglobin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:hint="@string/prompt_hg"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
             android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/bold"
             android:text="REMARKS"
@@ -193,34 +234,29 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HLLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/HGLayout" />
 
-        <RadioGroup
-            android:id="@+id/Rem"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RMLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_margin="16dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4">
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:startIconDrawable="@drawable/ic_status_preparing_borderless_svgrepo_com">
 
-            <RadioButton
+            <AutoCompleteTextView
+                android:id="@+id/Remarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Accepted" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Temporary Deferred" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Permanently Deferred" />
-        </RadioGroup>
+                android:fontFamily="@font/regular"
+                android:hint="@string/prompt_rem"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/VLayout"
@@ -232,7 +268,7 @@
             app:boxBackgroundColor="#E3EEFB"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Rem"
+            app:layout_constraintTop_toBottomOf="@+id/RMLayout"
             app:prefixText="ml"
             app:startIconDrawable="@drawable/ic_blood_bag_svgrepo_com">
 
@@ -242,7 +278,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
                 android:hint="Volume (ml)"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -291,81 +328,46 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btnPEContinue"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/bold"
-            android:text="TESTING"
-            android:textColor="@color/black"
-            android:textSize="24sp"
+            android:text="CONTINUE"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/BBOLayout" />
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/BTLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <Button
+            android:id="@+id/btnPEModify"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_height="60dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:text="EDIT"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"
-            app:startIconDrawable="@drawable/ic_blood_svgrepo_com">
-
-            <AutoCompleteTextView
-                android:id="@+id/BloodType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/regular"
-                android:hint="@string/prompt_bt"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/HGLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BTLayout"
-            app:startIconDrawable="@drawable/ic_blood_bag_svgrepo_com">
-
-            <AutoCompleteTextView
-                android:id="@+id/Hemoglobin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/regular"
-                android:hint="@string/prompt_hg"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
+            app:layout_constraintTop_toBottomOf="@+id/btnPEContinue" />
 
         <Button
-            android:id="@+id/btnPeSubmit"
+            android:id="@+id/btnPESubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:text="SUBMIT"
+            android:text="SUBMIT FORM"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HGLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPEModify" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
