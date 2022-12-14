@@ -211,17 +211,16 @@ public class Profile extends AppCompatActivity {
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId())
-        {
-            case 16908332:
-                Intent i = new Intent(this, MainActivity.class);
-                startActivity(i);
-                overridePendingTransition(R.anim.slide_in_2, R.anim.slide_out_2);
-                break;
-            case 2131296518:
+        if(item.getItemId() == 16908332){
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+            overridePendingTransition(R.anim.slide_in_2, R.anim.slide_out_2);
+        } else {
+            if(item.toString().equals("Edit Profile"))
+            {
                 enabled();
                 selectDate();
-                break;
+            }
         }
         return true;
     }

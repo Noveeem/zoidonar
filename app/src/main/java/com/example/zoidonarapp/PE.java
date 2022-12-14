@@ -283,6 +283,10 @@ public class PE extends AppCompatActivity {
                         toMap.put("type", "STUDENT");
                         reference.child("archive").child(eventDate).child(currentUser.getUid()).setValue(toMap);
                         reference.child("Events").child(eventDate).child(usertype).child(currentUser.getUid()).setValue(toMap);
+
+                        HashMap bloodmap = new HashMap();
+                        bloodmap.put("Donor_ID", currentUser.getUid());
+                        reference.child("Report").child(eventDate).child("Qualified").child("BloodType").child(bt).push().setValue(bloodmap);
                     }
 
                     @Override
@@ -290,6 +294,8 @@ public class PE extends AppCompatActivity {
 
                     }
                 });
+
+
 
                 HashMap<String, Object> bloodtypeHash = new HashMap<>();
                 bloodtypeHash.put("Blood_Type", bt);
@@ -307,10 +313,17 @@ public class PE extends AppCompatActivity {
                         .addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                if(!snapshot.exists()) {
-                                    DonorDonate donorDonate = new DonorDonate(1, vol);
-                                    reference.child("users_donated").child(currentUser.getUid()).child(eventDate).setValue(donorDonate);
+                                if(snapshot.exists()) {
+
+                                } else
+                                {
+                                    if(!snapshot.exists())
+                                    {
+                                        DonorDonate donorDonate = new DonorDonate(1, vol);
+                                        reference.child("users_donated").child(currentUser.getUid()).child(eventDate).setValue(donorDonate);
+                                    }
                                 }
+
                             }
 
                             @Override
