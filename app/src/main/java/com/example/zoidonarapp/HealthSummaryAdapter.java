@@ -32,7 +32,7 @@ public class HealthSummaryAdapter extends RecyclerView.Adapter<HealthSummaryAdap
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         modelQuestion modelQuestion  = list.get(position);
         holder.healthQuestion.setText(modelQuestion.getQuestion());;
-        holder.healthAnswer.setText("Answer: " + modelQuestion.getAnswer());
+        holder.healthAnswer.setText("Response: " + modelQuestion.getAnswer());
         switch (modelQuestion.getAnswer())
         {
             case "NO":

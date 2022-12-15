@@ -3,8 +3,10 @@ package com.example.zoidonarapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -180,8 +182,9 @@ public class MultiStep extends AppCompatActivity implements View.OnClickListener
                                   String status = pe.Remarks;
                                   if(status.equals("Accepted") | status.equals("Temporary Deferred") | status.equals("Permanently Deferred"))
                                   {
+                                      String showMessage = "It seems you already fill-out the Physical Examination.The result shows you are:<br><b>" + status + "</b>";
                                       TextView txtShowMessage = (TextView) findViewById(R.id.txtShowMessage);
-                                      txtShowMessage.setText("It seems you already fill-out the Physical Examination.\n The result shows you are: " + status);
+                                      txtShowMessage.setText(Html.fromHtml(showMessage));
                                   }
                                 } else
                                 {

@@ -74,7 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 break;
             case R.id.btnPassword:
-                Toast.makeText(this, "Nothing", Toast.LENGTH_SHORT).show();
+                Intent s = new Intent(this, Security.class);
+                startActivity(s);
+                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 break;
             case R.id.btnLogout:
                 logout();

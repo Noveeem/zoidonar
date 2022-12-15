@@ -76,7 +76,7 @@ public class History extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                     int units = (int) snapshot.getChildrenCount();
-                    txtUnit.setText(units+ " Units");
+                    txtUnit.setText(units+ " Unit/s");
                     for (DataSnapshot i : snapshot.getChildren())
                     {
                         int volume = i.child("volume").getValue(int.class);

@@ -17,13 +17,15 @@
         android:theme="@style/Theme.ZoidonarApp"
         tools:targetApi="31">
         <activity
+            android:name=".Security"
+            android:exported="false"
+            android:label="CHANGE PASSWORD"
+            android:theme="@style/Theme.ZoidonarApp.ActionBar"/>
+        <activity
             android:name=".Deferred"
             android:exported="false" />
         <activity
             android:name=".Accepted"
-            android:exported="false" />
-        <activity
-            android:name=".PESummary"
             android:exported="false" />
         <activity
             android:name=".HealthSummary"

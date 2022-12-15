@@ -69,7 +69,7 @@ public class PE extends AppCompatActivity {
     public static final String KEY_BBO = "BBO";
 
     private String BWeight, BPressure, PRate, Temp, Ga, Heent, HLungs, Rem, BType, Haemoglobin, Volume, Reason, BBO;
-    private String eventDate;
+    private String eventDate, eventName;
     private FirebaseAuth auth;
     private FirebaseUser currentUser;
     private FirebaseDatabase database;
@@ -488,9 +488,6 @@ public class PE extends AppCompatActivity {
 
         editor.apply();
 
-        Intent i = new Intent(this, PESummary.class);
-        startActivity(i);
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
     public void loadSharedPrefs(){
